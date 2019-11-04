@@ -32,7 +32,7 @@ body {
   font-weight:var(--primary-font-weight);
   text-align: center;
 color:var(--primary-text-color);
-margin: auto;
+margin: 20px;
 
 }
 * {
@@ -88,8 +88,8 @@ h1 {
 }
 
 h2 {
-  font-size:var(--h2-font-weight));
-  font-weight:var(--h2-font-weight));
+  font-size:var(--h2-font-weight);
+  font-weight:var(--h2-font-weight);
 }
 
 h3 {
@@ -145,14 +145,14 @@ button:focus,
 /* ==== GRIDS ===*/
 .grid__item{
   background-color: var(--grid-background-color);
-  padding-left: 10px
+  padding: 20px
 }
 
 .grid {
   display: grid;
-  grid-template-columns:1fr 1fr 1fr 1fr;
+  grid-template-columns:1fr 1fr 1fr;
   grid-gap: 20px;
-  align-items: flex-start;
+
 }
 
 /* ==== FOOTER ===*/
