@@ -1,0 +1,242 @@
+/* === GLOBAL SETTINGS === */
+:root {
+--body-background-color: #ffffff;
+--span-background-color:#000000;
+--h1-font-color:#404040;
+--link-color:#009999;
+--visited-link-color:#800080;
+--active-link-color:#ff00ff;
+--button-background-color:#00e699;
+--grid-background-color:#99ccff;
+--primary-font-size:16px;
+--primary-font-weight:400;
+--h1-font-size:40px;
+--h1-font-weight:700;
+--h2-font-size:4px;
+--h2-font-weight:700;
+--h3-font-size:18px;
+--h3-font-weight:700;
+--animation-ball-color1:#42f575;
+--animation-ball-color2:#428df5;
+--animation-ball-color3:#dd42f5;
+--primary-text-color:#000000;
+--secondary-text-color:#ffffff;
+}
+
+
+
+body {
+  color:var(--body-background-color);
+  font-family: 'Quicksand', sans-serif;
+  font-size:var(--primary-font-size);
+  font-weight:var(--primary-font-weight);
+  text-align: center;
+color:var(--primary-text-color);
+margin: auto;
+
+}
+* {
+  box-sizing: border-box;
+}
+
+
+/* === HEADER ===*/
+
+.page-header {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+}
+.page-header__item {
+  flex: 0 1 200px;
+}
+.page-header__item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+.navigation-list li {
+  list-style-type: none;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+/* === BODY ===*/
+
+.profile-photo {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+span{
+  background-color:var(--span-background-color);
+  color:var(--secondary-text-color);
+}
+p{
+  line-height: 1.6;
+}
+h1 {
+  font-size:var(--h1-font-size);
+  font-weight:var(--h1-font-weight);
+  color: var(--h1-font-color);
+}
+
+h2 {
+  font-size:var(--h2-font-weight));
+  font-weight:var(--h2-font-weight));
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+  font-weight: var(--h3-font-weight);
+}
+
+a {
+  color:var(--link-color);
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--visited-link-color);
+}
+
+a:active {
+  color:var(--active-link-color);
+}
+
+
+button,
+.button {
+  border:none;
+  display: inline-block;
+  font-family: inherit;
+  background-color:var(--button-background-color);
+  color:var(--secondary-text-color);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.3);
+  transition-duration: 0.2s opacity;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+
+.navigation-list__item--active {
+  text-decoration: none;
+}
+
+
+/* ==== GRIDS ===*/
+.grid__item{
+  background-color: var(--grid-background-color);
+  padding-left: 10px
+}
+
+.grid {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  align-items: flex-start;
+}
+
+/* ==== FOOTER ===*/
+
+.page-footer {
+  clear: both;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*==== MEDIA QUERIES ====*/
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 20px;
+  }
+}
+
+/* ==== ANIMATION ==== */
+
+.berlin-illustration{
+  max-width: 60%
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
+.cloud-front {
+  animation-duration: 10s;
+  animation-name: cloud-move;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
+}
+
+@keyframes color-change {
+  0% {
+    fill: var(--animation-ball-color1);
+  }
+  50% {
+    fill:var(--animation-ball-color2);
+  }
+  100% {
+    fill:var(--animation-ball-color3);
+  }
+}
+.ball {
+  animation: 4s color-change infinite alternate linear;
+}
+
+
+.horses {
+  animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    fill: yellow;
+  }
+  50% {
+    fill: red;
+  }
+}
