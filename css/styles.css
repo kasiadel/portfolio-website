@@ -136,7 +136,9 @@ button:focus,
   opacity: 0.7;
 }
 
-
+ul {
+list-style-type: none;
+}
 .navigation-list__item--active {
   text-decoration: none;
 }
